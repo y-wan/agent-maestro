@@ -990,7 +990,7 @@ export async function runOpenAIResponsesWebSearchLoop({
     lifecycle,
     requestOptions: {
       ...modelOptionsWithinBudget(baseRequestOptions, maxOutputTokens),
-      tools: preparedTools.tools,
+      tools: baseRequestOptions.tools ?? preparedTools.tools,
       toolMode: preparedTools.toolMode,
     },
   });

@@ -693,7 +693,7 @@ export async function runAnthropicWebSearchLoop({
         ...baseRequestOptions.modelOptions,
         max_tokens: maxTokens,
       },
-      tools: preparedTools.tools,
+      tools: baseRequestOptions.tools ?? preparedTools.tools,
       toolMode: preparedTools.toolMode,
     },
   });
